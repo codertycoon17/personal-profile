@@ -1,0 +1,232 @@
+<!DOCTYPE html> <!-- Declares this is an HTML5 document so the browser uses modern rules. -->
+<html lang="en"> <!-- Sets the language to English; helps screen readers and SEO. -->
+<head> <!-- The <head> holds metadata (not visible content) about the page. -->
+  <meta charset="utf-8" /> <!-- Uses UTF-8 so you can type any character (like emojis, ₹, etc.). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Makes the layout responsive on phones (1 CSS pixel = 1 device pixel initially). -->
+  <title>Uday Garg — Web Developer</title> <!-- The text shown on the browser tab and in search results. Change to your name. -->
+
+  <!-- ✅ Favicon: tiny icon on the browser tab. Place a file named favicon.ico in the SAME folder as this HTML file. -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" /> <!-- If you use PNG: href="favicon.png" type="image/png" -->
+
+  <!-- Load a nice clean font from Google Fonts (optional). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Speed hint: we will load from this domain soon. -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Another speed hint for font files; needs crossorigin. -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> <!-- Actual font CSS. -->
+
+  <style> /* Everything in this block is CSS (visual styling). */
+    /* ---------------------------------- */
+    /* 1) THEME VARIABLES (easy theming)  */
+    /* ---------------------------------- */
+    :root{ /* Variables you can reuse in CSS like --bg, --text, etc. */
+      --bg:#0b0f14;           /* Page background color. */
+      --surface:#111827;      /* Card background color. */
+      --muted:#94a3b8;        /* Subtle text color. */
+      --text:#e5e7eb;         /* Main text color. */
+      --accent:#22d3ee;       /* Highlight/brand color. */
+      --chip:#1f2937;         /* Background for skill chips. */
+    }
+
+    /* ----------------------------- */
+    /* 2) GLOBAL/RESET STYLE BASICS  */
+    /* ----------------------------- */
+    *{box-sizing:border-box} /* Makes width/height include padding+border (easier layouts). */
+    html,body{               /* Styles that apply to the whole page. */
+      margin:0;              /* Remove default browser margins. */
+      padding:0;             /* Remove default padding. */
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; /* Set default font stack. */
+      background:var(--bg);  /* Use our background variable. */
+      color:var(--text)      /* Default text color. */
+    }
+    a{color:var(--accent); text-decoration:none} /* Links use accent color and no underline. */
+    a:hover{opacity:.9}                           /* Slight fade on hover. */
+
+    /* ----------------------------- */
+    /* 3) LAYOUT WRAPPER             */
+    /* ----------------------------- */
+    .container{              /* Centers content and limits width. */
+      max-width:980px;       /* Max line width for readability. */
+      margin:0 auto;         /* Auto left/right margin centers it. */
+      padding:24px           /* Space around the edges. */
+    }
+
+    /* ----------------------------- */
+    /* 4) HEADER (HERO) SECTION      */
+    /* ----------------------------- */
+    .hero{                                   /* Intro card at the top. */
+      display:grid;                          /* Use CSS Grid for two columns. */
+      grid-template-columns:120px 1fr;       /* First column is 120px (for photo), rest is text. */
+      gap:20px;                              /* Space between columns. */
+      align-items:center;                    /* Vertically center content. */
+      padding:28px;                          /* Inner spacing. */
+      background:linear-gradient(180deg,#0f172a, #0b0f14); /* Subtle gradient background. */
+      border:1px solid #1f2937;              /* Thin border to separate from page. */
+      border-radius:18px;                    /* Rounded corners. */
+      box-shadow:0 10px 30px rgba(0,0,0,.35) /* Soft shadow for depth. */
+    }
+    .avatar{                                 /* Profile image style. */
+      width:120px; height:120px;             /* Make a square. */
+      border-radius:50%;                      /* Turn square into a circle. */
+      object-fit:cover;                       /* Crop image to fill the circle nicely. */
+      border:3px solid var(--accent);         /* Accent ring around the photo. */
+      background:#0b0f14                      /* Fallback bg if image fails. */
+    }
+    .hero h1{margin:0 0 6px; font-size:2rem; letter-spacing:.3px} /* Big name heading. */
+    .tagline{margin:0 0 8px; color:var(--muted)}                   /* Lighter subtitle text. */
+    .cta{display:flex; gap:12px; margin-top:12px}                  /* Row of buttons. */
+    .btn{                                                           /* Main button style. */
+      display:inline-flex; align-items:center; gap:8px;             /* Center text/icon if added. */
+      padding:10px 14px; border-radius:12px;                       /* Size + rounded corners. */
+      background:var(--accent); color:#031317; font-weight:700      /* Accent bg with dark text. */
+    }
+    .btn.ghost{background:transparent; border:1px solid #243041; color:var(--text)} /* Outline button. */
+
+    /* ----------------------------- */
+    /* 5) GENERIC SECTIONS & CARDS   */
+    /* ----------------------------- */
+    section{margin:28px 0}                /* Space between sections. */
+    h2{font-size:1.25rem; margin:0 0 12px}/* Section titles style. */
+    .card{                                /* Reusable content box. */
+      background:var(--surface);          /* Slightly lighter than page bg. */
+      border:1px solid #1f2937;           /* Hairline border. */
+      border-radius:16px;                 /* Smooth corners. */
+      padding:18px                        /* Inner spacing. */
+    }
+
+    /* ----------------------------- */
+    /* 6) SKILL CHIPS                 */
+    /* ----------------------------- */
+    .chips{display:flex; flex-wrap:wrap; gap:10px} /* Row that wraps to next line if needed. */
+    .chip{                                         /* Each pill-shaped skill tag. */
+      padding:8px 12px; background:var(--chip);    /* Dark background. */
+      border:1px solid #263141; color:#cbd5e1;     /* Thin border + light text. */
+      border-radius:999px; font-size:.9rem         /* Round pill and slightly smaller text. */
+    }
+
+    /* ----------------------------- */
+    /* 7) PROJECT GRID                */
+    /* ----------------------------- */
+    .grid{                                                        /* Responsive grid of projects. */
+      display:grid; grid-template-columns:repeat( auto-fit, minmax(240px,1fr)); /* Auto-fit columns. */
+      gap:16px                                                    /* Space between cards. */
+    }
+    .project{padding:16px; background:#0e1622; border:1px solid #1f2937; border-radius:14px} /* Each project card. */
+    .project h3{margin:0 0 6px; font-size:1.05rem}               /* Project title style. */
+    .project p{margin:0 0 12px; color:var(--muted)}               /* Short description style. */
+    .project a{font-weight:600}                                   /* Make links a bit bolder. */
+
+    /* ----------------------------- */
+    /* 8) FOOTER                      */
+    /* ----------------------------- */
+    footer{margin:36px 0 10px; color:#94a3b8; font-size:.95rem; text-align:center} /* Small centered text. */
+
+    /* ---------------------------------- */
+    /* 9) RESPONSIVE RULES (MOBILE FIRST) */
+    /* ---------------------------------- */
+    @media (max-width:560px){           /* These styles apply when screen width ≤ 560px. */
+      .hero{grid-template-columns:1fr;  /* Stack photo above text on small screens. */
+            text-align:center}          /* Center text for better look on phones. */
+      .cta{justify-content:center}      /* Center buttons. */
+      .avatar{margin:0 auto}            /* Center the photo. */
+    }
+  </style> <!-- End of CSS. -->
+</head>
+<body> <!-- Everything the user sees goes inside <body>. -->
+  <div class="container"> <!-- Centered wrapper to keep content narrow and tidy. -->
+
+    <!-- ================= HEADER ================= -->
+    <header class="hero"> <!-- The top intro card with photo + name + buttons. -->
+      <img class="avatar" src="PP.jpg" alt="Portrait of Uday Garg" /> <!-- Replace src with your own photo path. -->
+
+      <div> <!-- Right-hand side of the header: name, tagline, buttons. -->
+        <h1>Uday Garg</h1> <!-- Put your full name here. -->
+        <p class="tagline">Aspiring Web Developer • HTML • CSS • JavaScript</p> <!-- Short one-line description. -->
+
+        <div class="cta"> <!-- Buttons that jump to sections below. -->
+          <a class="btn" href="#projects">View Projects</a> <!-- Clicking scrolls to the Projects section. -->
+          <a class="btn ghost" href="#contact">Contact Me</a> <!-- Clicking scrolls to the Contact section. -->
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about"> <!-- Give sections an id so links like #about can scroll here. -->
+      <h2>About</h2> <!-- Section title. -->
+      <div class="card"> <!-- Card gives a nice background + padding. -->
+        <p>
+          Hi! I'm <strong>Uday Garg</strong>, a beginner web developer learning through
+          project-based practice. I'm currently building small apps and websites while mastering
+          HTML, CSS, and JavaScript.
+        </p> <!-- Edit this text to tell a sentence about yourself. -->
+      </div>
+    </section>
+
+        <!-- ================= SKILLS SECTION ================= -->
+    <section id="skills"> <!-- Skills area shows your current tools. -->
+      <h2>Skills</h2>
+      <div class="card">
+        <div class="chips"> <!-- Row of pill-shaped tags. Add/remove as you learn more. -->
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript (Basics)</span>
+          <span class="chip">Git & GitHub</span>
+          <span class="chip">Responsive Design</span>
+          <span class="chip">C</span>
+          <span class="chip">Python</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section id="projects"> <!-- List a few projects; links can be added later. -->
+      <h2>Projects</h2>
+      <div class="grid"> <!-- Responsive grid that makes 1–3 columns depending on screen size. -->
+        <article class="project"> <!-- One project card. Duplicate this block for more projects. -->
+          <h3>Project One</h3> <!-- Project title. -->
+          <p>Short description of what it does and what you learned.</p> <!-- One or two sentences. -->
+          <a href="#">Live Demo</a> • <a href="#">Source Code</a> <!-- Replace # with your links. -->
+        </article>
+        <article class="project">
+          <h3>Project Two</h3>
+          <p>Short description of what it does and what you learned.</p>
+          <a href="#">Live Demo</a> • <a href="#">Source Code</a>
+        </article>
+        <article class="project">
+          <h3>Project Three</h3>
+          <p>Short description of what it does and what you learned.</p>
+          <a href="#">Live Demo</a> • <a href="#">Source Code</a>
+        </article>
+      </div>
+    </section>
+
+       <!-- ================= CONTACT SECTION ================= -->
+    <section id="contact"> <!-- Ways people can reach you. -->
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          Email: garguday17@gmail.com <br>
+          Phone: 7983290704
+        </p>
+        <p>
+          <a href="https://github.com/codertycoon17" target="_blank" rel="noopener">GitHub</a>
+          •
+          <a href="https://www.linkedin.com/in/uday-garg-muj27/" target="_blank" rel="noopener">LinkedIn</a>
+          •
+          <a href="https://leetcode.com/u/codertycoon17/" target="_blank" rel="noopener">LeetCode</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+      © <span id="year"></span> Uday Garg • Built with HTML & CSS
+    </footer>
+
+  </div>
+
+  <script> // Small JavaScript block at the end so HTML loads first.
+    // Get the span with id="year" and set its text to the current year (e.g., 2025).
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
