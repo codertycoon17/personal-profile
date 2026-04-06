@@ -7,8 +7,6 @@
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
@@ -31,7 +29,7 @@
 
     a{color:var(--accent); text-decoration:none}
 
-    .container{max-width:980px; margin:auto; padding:24px}
+    .container{max-width:1000px; margin:auto; padding:24px}
 
     .hero{
       display:grid;
@@ -62,12 +60,6 @@
       background:var(--accent);
       color:#031317;
       font-weight:700;
-      transition:0.2s;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 20px rgba(34,211,238,0.3);
     }
 
     .btn.ghost{
@@ -96,7 +88,7 @@
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:16px;
     }
 
@@ -109,7 +101,14 @@
 
     .project p{color:var(--muted)}
 
-    .center{text-align:center; margin-top:20px}
+    .experience-item{
+      margin-bottom:16px;
+    }
+
+    .experience-item strong{
+      display:block;
+      margin-bottom:4px;
+    }
 
     footer{
       text-align:center;
@@ -144,18 +143,26 @@
       </div>
     </header>
 
+    <!-- SUMMARY -->
+    <section>
+      <h2>Professional Summary</h2>
+      <div class="card">
+        <p>
+          First-year Computer Science student with experience building and scaling AI-driven projects. 
+          Strong focus on execution, automation, and real-world problem solving. Passionate about leveraging 
+          technology to create efficient and scalable solutions.
+        </p>
+      </div>
+    </section>
+
     <!-- ABOUT -->
     <section>
       <h2>About</h2>
       <div class="card">
         <p>
-          Hi, I'm <strong>Uday Garg</strong>, a Computer Science student focused on building real-world, AI-powered products.
-        </p>
-        <p>
-          I built and scaled an AI-driven Instagram brand with a fully automated content pipeline using ChatGPT and AI tools, achieving consistent organic growth and engagement.
-        </p>
-        <p>
-          I enjoy turning ideas into working systems, whether it's web apps or automation workflows.
+          I have built an AI-powered Instagram brand with a fully automated content pipeline using ChatGPT 
+          and AI tools, achieving consistent organic growth. I enjoy experimenting with new technologies 
+          and turning ideas into working systems.
         </p>
       </div>
     </section>
@@ -176,41 +183,46 @@
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
+    <section>
+      <h2>Experience</h2>
+      <div class="card">
+
+        <div class="experience-item">
+          <strong>Summer Intern — Teachnook (IIT Roorkee × Wipro)</strong>
+          <p>Completed project-based internship focusing on real-world problem solving and structured workflow execution.</p>
+        </div>
+
+        <div class="experience-item">
+          <strong>Legal Research Intern — Law Offices, Muzaffarnagar</strong>
+          <p>Worked on research and documentation in taxation and criminal law, gaining exposure to compliance workflows.</p>
+        </div>
+
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section>
       <h2>Featured Projects</h2>
       <div class="grid">
 
-        <!-- REAL PROJECT -->
         <div class="project">
           <h3>AI Instagram Influencer</h3>
           <p>
-            Built and scaled an AI-powered Instagram page with a fully automated content pipeline using ChatGPT and AI image tools. Achieved 1000+ followers and consistent organic reach.
+            Built and scaled an AI-powered Instagram brand with automated content generation and posting pipeline.
           </p>
-          <a href="#">View Page</a> • 
-          <a href="https://github.com/codertycoon17" target="_blank">Source Code</a>
         </div>
 
-        <!-- PLACEHOLDER 1 -->
         <div class="project">
           <h3>Smart Invoice Generator (Coming Soon)</h3>
-          <p>
-            A web app to create invoices with automatic calculations and PDF export.
-          </p>
+          <p>Web app for generating invoices with automatic calculations.</p>
         </div>
 
-        <!-- PLACEHOLDER 2 -->
         <div class="project">
           <h3>Task Manager App (Coming Soon)</h3>
-          <p>
-            A productivity app with task tracking and local storage support.
-          </p>
+          <p>Task tracking app with local storage functionality.</p>
         </div>
 
-      </div>
-
-      <div class="center">
-        <a class="btn" href="projects.html">View All Projects</a>
       </div>
     </section>
 
@@ -218,14 +230,12 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="card">
+        <p>Email: garguday17@gmail.com</p>
+        <p>Phone: 7983290704</p>
         <p>
-          Email: garguday17@gmail.com <br>
-          Phone: 7983290704
-        </p>
-        <p>
-          <a href="https://github.com/codertycoon17" target="_blank">GitHub</a> •
-          <a href="https://www.linkedin.com/in/uday-garg-muj27/" target="_blank">LinkedIn</a> •
-          <a href="https://leetcode.com/u/codertycoon17/" target="_blank">LeetCode</a>
+          <a href="https://github.com/codertycoon17">GitHub</a> •
+          <a href="https://www.linkedin.com/in/uday-garg-muj27/">LinkedIn</a> •
+          <a href="https://leetcode.com/u/codertycoon17/">LeetCode</a>
         </p>
       </div>
     </section>
