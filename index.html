@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Uday Garg — Web Developer</title>
+  <title>Uday Garg — Developer</title>
 
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
@@ -22,18 +22,16 @@
     }
 
     *{box-sizing:border-box}
-    html,body{
+    body{
       margin:0;
-      padding:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:Inter,system-ui,sans-serif;
       background:var(--bg);
       color:var(--text)
     }
 
     a{color:var(--accent); text-decoration:none}
-    a:hover{opacity:.9}
 
-    .container{max-width:980px; margin:0 auto; padding:24px}
+    .container{max-width:980px; margin:auto; padding:24px}
 
     .hero{
       display:grid;
@@ -41,10 +39,9 @@
       gap:20px;
       align-items:center;
       padding:28px;
-      background:linear-gradient(180deg,#0f172a, #0b0f14);
+      background:linear-gradient(180deg,#0f172a,#0b0f14);
       border:1px solid #1f2937;
       border-radius:18px;
-      box-shadow:0 10px 30px rgba(0,0,0,.35)
     }
 
     .avatar{
@@ -55,20 +52,17 @@
       border:3px solid var(--accent);
     }
 
-    .hero h1{margin:0 0 6px; font-size:2rem}
-    .tagline{margin:0 0 8px; color:var(--muted)}
+    .tagline{color:var(--muted)}
 
-    .cta{display:flex; gap:12px; margin-top:12px}
+    .cta{margin-top:12px; display:flex; gap:12px}
 
     .btn{
-      display:inline-flex;
-      align-items:center;
       padding:10px 14px;
       border-radius:12px;
       background:var(--accent);
       color:#031317;
       font-weight:700;
-      transition:0.2s ease;
+      transition:0.2s;
     }
 
     .btn:hover{
@@ -77,63 +71,56 @@
     }
 
     .btn.ghost{
-      background:transparent;
+      background:none;
       border:1px solid #243041;
       color:var(--text)
     }
 
-    section{margin:28px 0}
-    h2{font-size:1.25rem; margin:0 0 12px}
+    section{margin:30px 0}
+    h2{margin-bottom:12px}
 
     .card{
       background:var(--surface);
-      border:1px solid #1f2937;
       border-radius:16px;
-      padding:18px
+      padding:18px;
+      border:1px solid #1f2937;
     }
 
     .chips{display:flex; flex-wrap:wrap; gap:10px}
-
     .chip{
       padding:8px 12px;
       background:var(--chip);
-      border:1px solid #263141;
       border-radius:999px;
-      font-size:.9rem
+      font-size:.9rem;
     }
 
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
-      gap:16px
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
     }
 
     .project{
-      padding:16px;
       background:#0e1622;
+      padding:16px;
+      border-radius:14px;
       border:1px solid #1f2937;
-      border-radius:14px
     }
 
-    .project h3{margin:0 0 6px}
-    .project p{margin:0 0 12px; color:var(--muted)}
+    .project p{color:var(--muted)}
 
-    .center{
-      text-align:center;
-      margin-top:20px;
-    }
+    .center{text-align:center; margin-top:20px}
 
     footer{
-      margin:36px 0 10px;
+      text-align:center;
       color:#94a3b8;
-      font-size:.95rem;
-      text-align:center
+      margin-top:40px;
     }
 
-    @media (max-width:560px){
+    @media(max-width:560px){
       .hero{grid-template-columns:1fr; text-align:center}
+      .avatar{margin:auto}
       .cta{justify-content:center}
-      .avatar{margin:0 auto}
     }
   </style>
 </head>
@@ -146,7 +133,10 @@
       <img class="avatar" src="profile.jpg" alt="Uday Garg">
       <div>
         <h1>Uday Garg</h1>
-        <p class="tagline">Building clean, responsive web experiences with HTML, CSS & JavaScript</p>
+        <p class="tagline">
+          Building AI-powered products and scalable web experiences
+        </p>
+
         <div class="cta">
           <a class="btn" href="projects.html">View Projects</a>
           <a class="btn ghost" href="#contact">Contact Me</a>
@@ -159,9 +149,13 @@
       <h2>About</h2>
       <div class="card">
         <p>
-          Hi! I'm <strong>Uday Garg</strong>, a beginner web developer learning through
-          project-based practice. I'm currently building small apps and websites while mastering
-          HTML, CSS, and JavaScript.
+          Hi, I'm <strong>Uday Garg</strong>, a Computer Science student focused on building real-world, AI-powered products.
+        </p>
+        <p>
+          I built and scaled an AI-driven Instagram brand with a fully automated content pipeline using ChatGPT and AI tools, achieving consistent organic growth and engagement.
+        </p>
+        <p>
+          I enjoy turning ideas into working systems, whether it's web apps or automation workflows.
         </p>
       </div>
     </section>
@@ -171,46 +165,50 @@
       <h2>Skills</h2>
       <div class="card">
         <div class="chips">
-          <span class="chip">HTML5</span>
-          <span class="chip">CSS3</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
           <span class="chip">JavaScript</span>
           <span class="chip">Git & GitHub</span>
-          <span class="chip">Responsive Design</span>
-          <span class="chip">C</span>
+          <span class="chip">AI Tools</span>
+          <span class="chip">Automation</span>
           <span class="chip">Python</span>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED PROJECTS -->
+    <!-- PROJECTS -->
     <section>
       <h2>Featured Projects</h2>
       <div class="grid">
 
+        <!-- REAL PROJECT -->
         <div class="project">
-          <h3>Project One</h3>
-          <p>Brief description of what it does.</p>
-          <a href="#">Live Demo</a> • 
+          <h3>AI Instagram Influencer</h3>
+          <p>
+            Built and scaled an AI-powered Instagram page with a fully automated content pipeline using ChatGPT and AI image tools. Achieved 1000+ followers and consistent organic reach.
+          </p>
+          <a href="#">View Page</a> • 
           <a href="https://github.com/codertycoon17" target="_blank">Source Code</a>
         </div>
 
+        <!-- PLACEHOLDER 1 -->
         <div class="project">
-          <h3>Project Two</h3>
-          <p>Brief description of what it does.</p>
-          <a href="#">Live Demo</a> • 
-          <a href="https://github.com/codertycoon17" target="_blank">Source Code</a>
+          <h3>Smart Invoice Generator (Coming Soon)</h3>
+          <p>
+            A web app to create invoices with automatic calculations and PDF export.
+          </p>
         </div>
 
+        <!-- PLACEHOLDER 2 -->
         <div class="project">
-          <h3>Project Three</h3>
-          <p>Brief description of what it does.</p>
-          <a href="#">Live Demo</a> • 
-          <a href="https://github.com/codertycoon17" target="_blank">Source Code</a>
+          <h3>Task Manager App (Coming Soon)</h3>
+          <p>
+            A productivity app with task tracking and local storage support.
+          </p>
         </div>
 
       </div>
 
-      <!-- View All Button -->
       <div class="center">
         <a class="btn" href="projects.html">View All Projects</a>
       </div>
@@ -233,13 +231,13 @@
     </section>
 
     <footer>
-      © <span id="year"></span> Uday Garg • Built with HTML & CSS
+      © <span id="year"></span> Uday Garg
     </footer>
 
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
